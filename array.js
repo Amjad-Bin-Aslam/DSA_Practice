@@ -1,5 +1,5 @@
-let arr = [1, 2, 3, 4, 5];
-let arr2 = [10, 20, 30]
+// let arr = [1, 2, 3, 4, 5];
+// let arr2 = [10, 20, 30]
 
 // arr.push(4)
 // arr.pop()
@@ -61,3 +61,94 @@ let arr2 = [10, 20, 30]
 // const num2 = num.slice(0, 5)
 // console.log(num)
 // console.log(num2)
+
+
+
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8]
+
+// const arrReduce = arr.reduce((acc, item) => {
+//     console.log(acc)
+//     return acc + item
+// }, 0)
+// console.log(arrReduce)
+
+
+// let text = ""
+// for (let item in arr) {
+//     text += item + "," + arr[item]
+// }
+// console.log(text)
+
+
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i])
+// }
+
+
+// let arrMap = arr.map((item) => {
+//     return item + 10
+// }).map((item) => {
+//     return item * 2
+// }).map((item) => {
+//     return item + 1
+// })
+// console.log(arrMap)
+
+
+
+// let arrFilter = arr.filter((item, index, array) => {
+//     return item > 2
+// })
+// console.log(arrMap)
+
+
+// let arrFind = arr.find((item) => {
+//     return item > 4
+// })
+// console.log(arrFind)
+
+
+let array = [10, 3, 45, 67, 8, 9, 7, 6, 4, 5, 6, 7, 8]
+
+// let unsorted = array.sort((a, b) => {
+//     return a - b
+// })
+// console.log(unsorted)
+
+
+// unOptimized way || brute force search
+// function secndLargetNumber(arr) {
+//     let uniqueArray = Array.from(new Set(arr))
+
+//     uniqueArray.sort((a, b) => {
+//         return b - a
+//     })
+
+//     if (uniqueArray.length >= 2) {
+//         return uniqueArray[1]
+//     } else {
+//         return -1
+//     }
+// }
+// console.log(secndLargetNumber(array))
+
+
+
+// optimized way
+// [10, 3, 45, 67, 8, 9, 7, 6, 4, 5, 6, 7, 8]
+function secondLargestNumber(arr) {
+    let largest = Number.NEGATIVE_INFINITY;
+    let secondLargest = Number.NEGATIVE_INFINITY;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > largest) {
+            secondLargest = largest
+            largest = arr[i]
+        } else if (arr[i] != largest && arr[i] > secondLargest) {
+            secondLargest = arr[i]
+        }
+    }
+    return secondLargest;
+}
+
+console.log(secondLargestNumber(array))
