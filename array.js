@@ -171,7 +171,7 @@ let array = [10, 3, 45, 67, 8, 9, 7, 6, 4, 5, 6, 7, 8]
 
 
 
-// fabonacci algortihm 
+// fabonacci numbers
 // let prev1 = 0, prev2 = 1;
 // for (let i = 0; i <= 18; i++) {
 //     let fabonacciNumber = prev1 + prev2
@@ -179,6 +179,8 @@ let array = [10, 3, 45, 67, 8, 9, 7, 6, 4, 5, 6, 7, 8]
 //     prev1 = prev2
 //     prev2 = fabonacciNumber
 // }
+
+
 
 // fabonacci series = 0,1,1,2,3,5,8,13,21,34,55,89,144,233
 // 1st iteration
@@ -189,7 +191,6 @@ let array = [10, 3, 45, 67, 8, 9, 7, 6, 4, 5, 6, 7, 8]
 // index = 4, value = 2, so 2+1 = 3 and arr = [0,1,1,2,3]
 // 4th iteration
 // index = 5, value = 3, so 3+2 = 5 and arr = [0,1,1,2,3,5]
-
 var fib = function (n) {
     const arr = [0, 1]
 
@@ -198,13 +199,19 @@ var fib = function (n) {
     }
     console.log(arr[n])
 }
-
 fib(5)
 
 
 
+var factorial = function (n) {
+    if (n <= 1) return 1
+    return n * factorial(n - 1)
+}
+console.log(factorial(5))
 
-// const isPlindrome = (x) => {
+
+
+// const isPalindrome = (x) => {
 //     return x < 0 ? false : x === +x.toString().split('').reverse().join('')
 // }
-// console.log(isPlindrome(154)) 
+// console.log(isPalindrome(154)) 
